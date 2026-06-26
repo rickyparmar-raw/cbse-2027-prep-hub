@@ -1,0 +1,503 @@
+{
+ "subjects": {
+  "Physics": {
+   "pretty": "Physics",
+   "icon": "\u269b\ufe0f",
+   "pyq": [
+    {
+     "title": "Ch 1 \u00b7 Electric Charges and Fields",
+     "path": "assets/pyq/Physics/Ch01_Electric_Charges_and_Fields.pdf",
+     "size": 604077
+    },
+    {
+     "title": "Ch 2 \u00b7 Electrostatic Potential and Capacitance",
+     "path": "assets/pyq/Physics/Ch02_Electrostatic_Potential_and_Capacitance.pdf",
+     "size": 718267
+    },
+    {
+     "title": "Ch 3 \u00b7 Current Electricity",
+     "path": "assets/pyq/Physics/Ch03_Current_Electricity.pdf",
+     "size": 610507
+    },
+    {
+     "title": "Ch 4 \u00b7 Moving Charges and Magnetism",
+     "path": "assets/pyq/Physics/Ch04_Moving_Charges_and_Magnetism.pdf",
+     "size": 680131
+    },
+    {
+     "title": "Ch 5 \u00b7 Magnetism and Matter",
+     "path": "assets/pyq/Physics/Ch05_Magnetism_and_Matter.pdf",
+     "size": 494233
+    },
+    {
+     "title": "Ch 6 \u00b7 Electromagnetic Induction",
+     "path": "assets/pyq/Physics/Ch06_Electromagnetic_Induction.pdf",
+     "size": 669659
+    },
+    {
+     "title": "Ch 7 \u00b7 Alternating Current",
+     "path": "assets/pyq/Physics/Ch07_Alternating_Current.pdf",
+     "size": 939322
+    },
+    {
+     "title": "Ch 8 \u00b7 Electromagnetic Waves",
+     "path": "assets/pyq/Physics/Ch08_Electromagnetic_Waves.pdf",
+     "size": 662738
+    },
+    {
+     "title": "Ch 9 \u00b7 Ray Optics and Optical Instruments",
+     "path": "assets/pyq/Physics/Ch09_Ray_Optics_and_Optical_Instruments.pdf",
+     "size": 791842
+    },
+    {
+     "title": "Ch 10 \u00b7 Wave Optics",
+     "path": "assets/pyq/Physics/Ch10_Wave_Optics.pdf",
+     "size": 623859
+    },
+    {
+     "title": "Ch 11 \u00b7 Dual Nature of Radiation and Matter",
+     "path": "assets/pyq/Physics/Ch11_Dual_Nature_of_Radiation_and_Matter.pdf",
+     "size": 696455
+    },
+    {
+     "title": "Ch 12 \u00b7 Atoms",
+     "path": "assets/pyq/Physics/Ch12_Atoms.pdf",
+     "size": 819917
+    },
+    {
+     "title": "Ch 13 \u00b7 Nuclei",
+     "path": "assets/pyq/Physics/Ch13_Nuclei.pdf",
+     "size": 728039
+    },
+    {
+     "title": "Ch 14 \u00b7 Semiconductor Electronics",
+     "path": "assets/pyq/Physics/Ch14_Semiconductor_Electronics.pdf",
+     "size": 418231
+    }
+   ],
+   "final": [
+    {
+     "title": "Set 1",
+     "path": "assets/final/Physics/Physics_Set01.pdf",
+     "size": 184771
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/final/Physics/Physics_Set02.pdf",
+     "size": 222604
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/final/Physics/Physics_Set03.pdf",
+     "size": 225828
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/final/Physics/Physics_Set04.pdf",
+     "size": 232285
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/final/Physics/Physics_Set05.pdf",
+     "size": 277827
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/final/Physics/Physics_Set06.pdf",
+     "size": 224829
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/final/Physics/Physics_Set07.pdf",
+     "size": 278168
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/final/Physics/Physics_Set08.pdf",
+     "size": 274971
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/final/Physics/Physics_Set09.pdf",
+     "size": 264913
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/final/Physics/Physics_Set10.pdf",
+     "size": 301587
+    }
+   ],
+   "halfyearly": []
+  },
+  "Chemistry": {
+   "pretty": "Chemistry",
+   "icon": "\ud83e\uddea",
+   "pyq": [
+    {
+     "title": "Ch 1 \u00b7 Solutions",
+     "path": "assets/pyq/Chemistry/Ch01_Solutions.pdf",
+     "size": 949428
+    },
+    {
+     "title": "Ch 2 \u00b7 Electrochemistry",
+     "path": "assets/pyq/Chemistry/Ch02_Electrochemistry.pdf",
+     "size": 1161435
+    },
+    {
+     "title": "Ch 3 \u00b7 Chemical Kinetics",
+     "path": "assets/pyq/Chemistry/Ch03_Chemical_Kinetics.pdf",
+     "size": 1144146
+    },
+    {
+     "title": "Ch 4 \u00b7 d and f Block Elements",
+     "path": "assets/pyq/Chemistry/Ch04_d_and_f_Block_Elements.pdf",
+     "size": 749350
+    },
+    {
+     "title": "Ch 5 \u00b7 Coordination Compounds",
+     "path": "assets/pyq/Chemistry/Ch05_Coordination_Compounds.pdf",
+     "size": 590881
+    },
+    {
+     "title": "Ch 6 \u00b7 Haloalkanes and Haloarenes",
+     "path": "assets/pyq/Chemistry/Ch06_Haloalkanes_and_Haloarenes.pdf",
+     "size": 717685
+    },
+    {
+     "title": "Ch 7 \u00b7 Alcohols Phenols and Ethers",
+     "path": "assets/pyq/Chemistry/Ch07_Alcohols_Phenols_and_Ethers.pdf",
+     "size": 592663
+    },
+    {
+     "title": "Ch 8 \u00b7 Aldehydes Ketones and Carboxylic Acids",
+     "path": "assets/pyq/Chemistry/Ch08_Aldehydes_Ketones_and_Carboxylic_Acids.pdf",
+     "size": 592208
+    },
+    {
+     "title": "Ch 9 \u00b7 Amines",
+     "path": "assets/pyq/Chemistry/Ch09_Amines.pdf",
+     "size": 959135
+    },
+    {
+     "title": "Ch 10 \u00b7 Biomolecules",
+     "path": "assets/pyq/Chemistry/Ch10_Biomolecules.pdf",
+     "size": 197454
+    }
+   ],
+   "final": [
+    {
+     "title": "Set 1",
+     "path": "assets/final/Chemistry/Chemistry_Set01.pdf",
+     "size": 363158
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/final/Chemistry/Chemistry_Set02.pdf",
+     "size": 259564
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/final/Chemistry/Chemistry_Set03.pdf",
+     "size": 263639
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/final/Chemistry/Chemistry_Set04.pdf",
+     "size": 307450
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/final/Chemistry/Chemistry_Set05.pdf",
+     "size": 369269
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/final/Chemistry/Chemistry_Set06.pdf",
+     "size": 409338
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/final/Chemistry/Chemistry_Set07.pdf",
+     "size": 375059
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/final/Chemistry/Chemistry_Set08.pdf",
+     "size": 319174
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/final/Chemistry/Chemistry_Set09.pdf",
+     "size": 328815
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/final/Chemistry/Chemistry_Set10.pdf",
+     "size": 359294
+    }
+   ],
+   "halfyearly": []
+  },
+  "Mathematics": {
+   "pretty": "Maths",
+   "icon": "\ud83d\udcd0",
+   "pyq": [
+    {
+     "title": "Ch 1 \u00b7 Relations Functions Inverse Trig",
+     "path": "assets/pyq/Mathematics/Ch01_Relations_Functions_Inverse_Trig.pdf",
+     "size": 890685
+    },
+    {
+     "title": "Ch 2 \u00b7 Matrices and Determinants",
+     "path": "assets/pyq/Mathematics/Ch02_Matrices_and_Determinants.pdf",
+     "size": 734237
+    },
+    {
+     "title": "Ch 3 \u00b7 Continuity Differentiability AOD",
+     "path": "assets/pyq/Mathematics/Ch03_Continuity_Differentiability_AOD.pdf",
+     "size": 835445
+    },
+    {
+     "title": "Ch 4 \u00b7 Integrals and Applications",
+     "path": "assets/pyq/Mathematics/Ch04_Integrals_and_Applications.pdf",
+     "size": 499194
+    },
+    {
+     "title": "Ch 5 \u00b7 Differential Equations",
+     "path": "assets/pyq/Mathematics/Ch05_Differential_Equations.pdf",
+     "size": 842035
+    },
+    {
+     "title": "Ch 6 \u00b7 Vectors and 3D Geometry",
+     "path": "assets/pyq/Mathematics/Ch06_Vectors_and_3D_Geometry.pdf",
+     "size": 956049
+    },
+    {
+     "title": "Ch 7 \u00b7 Linear Programming",
+     "path": "assets/pyq/Mathematics/Ch07_Linear_Programming.pdf",
+     "size": 475968
+    },
+    {
+     "title": "Ch 8 \u00b7 Probability",
+     "path": "assets/pyq/Mathematics/Ch08_Probability.pdf",
+     "size": 1006922
+    }
+   ],
+   "final": [
+    {
+     "title": "Set 1",
+     "path": "assets/final/Mathematics/Mathematics_Set01.pdf",
+     "size": 304147
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/final/Mathematics/Mathematics_Set02.pdf",
+     "size": 286066
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/final/Mathematics/Mathematics_Set03.pdf",
+     "size": 330081
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/final/Mathematics/Mathematics_Set04.pdf",
+     "size": 291046
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/final/Mathematics/Mathematics_Set05.pdf",
+     "size": 313634
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/final/Mathematics/Mathematics_Set06.pdf",
+     "size": 305314
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/final/Mathematics/Mathematics_Set07.pdf",
+     "size": 333907
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/final/Mathematics/Mathematics_Set08.pdf",
+     "size": 327120
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/final/Mathematics/Mathematics_Set09.pdf",
+     "size": 288468
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/final/Mathematics/Mathematics_Set10.pdf",
+     "size": 326961
+    }
+   ],
+   "halfyearly": []
+  },
+  "Physical_Education": {
+   "pretty": "Physical Education",
+   "icon": "\ud83c\udfc3",
+   "pyq": [
+    {
+     "title": "Unit 1 \u00b7 Management of Sporting Events",
+     "path": "assets/pyq/Physical_Education/Unit01_Management_of_Sporting_Events.pdf",
+     "size": 194089
+    },
+    {
+     "title": "Unit 2 \u00b7 Children and Women in Sports",
+     "path": "assets/pyq/Physical_Education/Unit02_Children_and_Women_in_Sports.pdf",
+     "size": 134596
+    },
+    {
+     "title": "Unit 3 \u00b7 Yoga Lifestyle Disease",
+     "path": "assets/pyq/Physical_Education/Unit03_Yoga_Lifestyle_Disease.pdf",
+     "size": 167100
+    },
+    {
+     "title": "Unit 4 \u00b7 PE and Sports for CWSN",
+     "path": "assets/pyq/Physical_Education/Unit04_PE_and_Sports_for_CWSN.pdf",
+     "size": 169677
+    },
+    {
+     "title": "Unit 5 \u00b7 Sports and Nutrition",
+     "path": "assets/pyq/Physical_Education/Unit05_Sports_and_Nutrition.pdf",
+     "size": 225839
+    },
+    {
+     "title": "Unit 6 \u00b7 Test and Measurement",
+     "path": "assets/pyq/Physical_Education/Unit06_Test_and_Measurement.pdf",
+     "size": 344881
+    },
+    {
+     "title": "Unit 7 \u00b7 Physiology and Injuries",
+     "path": "assets/pyq/Physical_Education/Unit07_Physiology_and_Injuries.pdf",
+     "size": 164287
+    },
+    {
+     "title": "Unit 8 \u00b7 Biomechanics and Sports",
+     "path": "assets/pyq/Physical_Education/Unit08_Biomechanics_and_Sports.pdf",
+     "size": 169881
+    },
+    {
+     "title": "Unit 9 \u00b7 Psychology and Sports",
+     "path": "assets/pyq/Physical_Education/Unit09_Psychology_and_Sports.pdf",
+     "size": 152264
+    },
+    {
+     "title": "Unit 10 \u00b7 Training in Sports",
+     "path": "assets/pyq/Physical_Education/Unit10_Training_in_Sports.pdf",
+     "size": 176799
+    }
+   ],
+   "final": [
+    {
+     "title": "Set 1",
+     "path": "assets/final/Physical_Education/Physical_Education_Set01.pdf",
+     "size": 129475
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/final/Physical_Education/Physical_Education_Set02.pdf",
+     "size": 130652
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/final/Physical_Education/Physical_Education_Set03.pdf",
+     "size": 121536
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/final/Physical_Education/Physical_Education_Set04.pdf",
+     "size": 130064
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/final/Physical_Education/Physical_Education_Set05.pdf",
+     "size": 128320
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/final/Physical_Education/Physical_Education_Set06.pdf",
+     "size": 137052
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/final/Physical_Education/Physical_Education_Set07.pdf",
+     "size": 134934
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/final/Physical_Education/Physical_Education_Set08.pdf",
+     "size": 135293
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/final/Physical_Education/Physical_Education_Set09.pdf",
+     "size": 135967
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/final/Physical_Education/Physical_Education_Set10.pdf",
+     "size": 140493
+    }
+   ],
+   "halfyearly": []
+  }
+ },
+ "extras": {
+  "formula": [
+   {
+    "title": "Chemistry Formula Sheet",
+    "path": "assets/formula/Chemistry_Formula_Sheet.pdf",
+    "size": 425828
+   },
+   {
+    "title": "Mathematics Formula Sheet",
+    "path": "assets/formula/Mathematics_Formula_Sheet.pdf",
+    "size": 521307
+   },
+   {
+    "title": "Physical Education Formula Sheet",
+    "path": "assets/formula/Physical_Education_Formula_Sheet.pdf",
+    "size": 198562
+   },
+   {
+    "title": "Physics Formula Sheet",
+    "path": "assets/formula/Physics_Formula_Sheet.pdf",
+    "size": 757946
+   }
+  ],
+  "notes": [
+   {
+    "title": "Isomerism Class Notes Pankaj Sir",
+    "path": "assets/notes/Isomerism_Class_Notes_Pankaj_Sir.pdf",
+    "size": 283075
+   },
+   {
+    "title": "Isomerism Slides Pankaj Sir",
+    "path": "assets/notes/Isomerism_Slides_Pankaj_Sir.pdf",
+    "size": 18326534
+   },
+   {
+    "title": "Optical Isomerism Class Notes Pankaj Sir",
+    "path": "assets/notes/Optical_Isomerism_Class_Notes_Pankaj_Sir.pdf",
+    "size": 219402
+   },
+   {
+    "title": "Optical Isomerism Slides Pankaj Sir",
+    "path": "assets/notes/Optical_Isomerism_Slides_Pankaj_Sir.pdf",
+    "size": 11181403
+   }
+  ]
+ },
+ "stats": {
+  "pyq": 42,
+  "final": 40,
+  "halfyearly": 0,
+  "formula": 4,
+  "notes": 4
+ }
+}

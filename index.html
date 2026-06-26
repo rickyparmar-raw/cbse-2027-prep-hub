@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBSE 2027 · Prep Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>📘 CBSE 2027 · Prep Hub</h1>
+    <div class="bar-right">
+      <input id="search" type="search" placeholder="Search chapters, papers…" autocomplete="off">
+      <button id="theme" title="Toggle theme">🌙</button>
+    </div>
+  </div>
+  <nav id="tabs">
+    <button class="tab active" data-view="home">Home</button>
+    <button class="tab" data-view="pyq">PYQ Banks</button>
+    <button class="tab" data-view="halfyearly">Half-Yearly</button>
+    <button class="tab" data-view="final">Final Papers</button>
+    <button class="tab" data-view="extras">Formula & Notes</button>
+  </nav>
+</header>
+
+<main id="app"><p class="loading">Loading…</p></main>
+
+<!-- PDF viewer modal -->
+<div id="viewer" class="hidden">
+  <div class="viewer-bar">
+    <span id="viewer-title"></span>
+    <div>
+      <a id="viewer-dl" href="#" download class="vbtn">⬇ Download</a>
+      <a id="viewer-open" href="#" target="_blank" class="vbtn">↗ New tab</a>
+      <button id="viewer-close" class="vbtn">✕ Close</button>
+    </div>
+  </div>
+  <iframe id="viewer-frame" src=""></iframe>
+</div>
+
+<footer>CBSE Class 12 (2027) Prep Hub · PYQ banks, predicted papers, formula sheets & notes · Built for self-study</footer>
+<script src="app.js"></script>
+</body>
+</html>
