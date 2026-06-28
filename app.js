@@ -1,4 +1,4 @@
-let M=null, VIEW='home', SUBJ=null;
+let M=null, VIEW='home', SUBJ=null, QZ=null, QSTATE=null;
 const $=s=>document.querySelector(s), app=$('#app');
 const KEY='cbse2027_done';
 const done=()=>JSON.parse(localStorage.getItem(KEY)||'{}');
@@ -167,6 +167,118 @@ function infographics(){
   });
 }
 
+function quizSubjects(){
+  app.innerHTML=`<div class="sectitle">Quiz — pick a subject</div>
+    <p style="color:var(--muted);font-size:13.5px;margin:-10px 0 20px">Interactive MCQ & Assertion-Reason practice, auto-scored. Pulled from the real PYQ banks.</p>
+    <div class="grid" id="qg"></div>`;
+  const g=$('#qg');
+  if(!QZ){g.innerHTML='<div class="empty">Quiz data not loaded.</div>';return;}
+  const subjMeta={Physics:'⚛️',Chemistry:'🧪',Mathematics:'📐',Physical_Education:'🏃'};
+  let any=false;
+  Object.entries(QZ).forEach(([k,v])=>{
+    const nq=v.chapters.reduce((a,c)=>a+c.questions.length,0);
+    if(!nq)return; any=true;
+    const c=document.createElement('div');c.className='card';
+    c.innerHTML=`<div class="ic">${v.icon||subjMeta[k]||'📘'}</div><div class="nm">${k.replace('_',' ')}</div><div class="meta">${nq} questions · ${v.chapters.length} chapters</div>`;
+    c.onclick=()=>{QSTATE={subj:k};render();};
+    g.appendChild(c);
+  });
+  if(!any)g.innerHTML='<div class="empty">No auto-gradable questions available yet.</div>';
+}
+
+function quizChapters(){
+  const v=QZ[QSTATE.subj];
+  app.innerHTML=`<span class="backlink" id="back">← All subjects</span>
+    <div class="subhead"><span class="big">${v.icon||'📘'}</span><h2>${QSTATE.subj.replace('_',' ')} Quiz</h2></div>
+    <p style="color:var(--muted);font-size:13.5px;margin:8px 0 20px">Pick a chapter, or test the whole subject.</p>
+    <div style="margin-bottom:18px"><button class="rand" id="allq">🎲 Quiz all chapters (20 random)</button></div>
+    <div id="qc" style="display:grid;gap:8px"></div>`;
+  $('#back').onclick=()=>{QSTATE=null;render();};
+  $('#allq').onclick=()=>{
+    let pool=[];v.chapters.forEach(c=>c.questions.forEach(q=>pool.push(q)));
+    pool=pool.sort(()=>Math.random()-0.5).slice(0,20);
+    startQuiz('All chapters',pool);
+  };
+  const wrap=$('#qc');
+  v.chapters.forEach(c=>{
+    const el=document.createElement('div');el.className='item';
+    el.innerHTML=`<span class="pic">❓</span><div class="txt"><div class="t"></div><div class="s">${c.questions.length} questions</div></div><span style="color:var(--faint)">→</span>`;
+    el.querySelector('.t').textContent=c.title;
+    el.onclick=()=>startQuiz(c.title, c.questions.slice().sort(()=>Math.random()-0.5));
+    wrap.appendChild(el);
+  });
+}
+
+function startQuiz(title, questions){
+  QSTATE.quiz={title, questions, i:0, score:0, answered:false, picks:[]};
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const Q=QSTATE.quiz, item=Q.questions[Q.i];
+  app.innerHTML=`<span class="backlink" id="back">← Exit quiz</span>
+    <div class="qbar"><span>${Q.title}</span><span>${Q.i+1} / ${Q.questions.length} · Score ${Q.score}</span></div>
+    <div class="qprog"><div class="qprog-fill" style="width:${(Q.i/Q.questions.length)*100}%"></div></div>
+    <div class="qcard">
+      <div class="qtext">${item.q}</div>
+      <div class="qopts" id="opts"></div>
+      <div id="qfeed"></div>
+      <div id="qnav"></div>
+    </div>`;
+  $('#back').onclick=()=>{if(confirm('Exit this quiz? Progress is lost.')){QSTATE={subj:QSTATE.subj};render();}};
+  const opts=$('#opts');
+  item.opts.forEach((o,idx)=>{
+    const b=document.createElement('button');b.className='qopt';
+    b.innerHTML=`<span class="qlet">${String.fromCharCode(65+idx)}</span><span>${o}</span>`;
+    b.onclick=()=>pick(idx);
+    opts.appendChild(b);
+  });
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([app]);
+}
+
+function pick(idx){
+  const Q=QSTATE.quiz, item=Q.questions[Q.i];
+  if(Q.answered)return;
+  Q.answered=true; Q.picks.push(idx);
+  const correct=item.correct;
+  if(idx===correct)Q.score++;
+  document.querySelectorAll('.qopt').forEach((b,i)=>{
+    b.classList.add('locked');
+    if(i===correct)b.classList.add('right');
+    else if(i===idx)b.classList.add('wrong');
+  });
+  $('#qfeed').innerHTML=idx===correct
+    ?`<div class="feed ok">✓ Correct</div>`
+    :`<div class="feed no">✗ Correct answer: ${String.fromCharCode(65+correct)}</div>`;
+  const nav=$('#qnav');
+  const last=Q.i===Q.questions.length-1;
+  const btn=document.createElement('button');btn.className='rand';btn.textContent=last?'See result':'Next question →';
+  btn.onclick=()=>{ if(last){quizResult();} else {Q.i++;Q.answered=false;renderQuestion();} };
+  nav.appendChild(btn);
+}
+
+function quizResult(){
+  const Q=QSTATE.quiz, pct=Math.round(Q.score/Q.questions.length*100);
+  const msg=pct>=80?'Excellent — exam ready.':pct>=60?'Solid. A bit more revision.':pct>=40?'Getting there — review the weak spots.':'Needs work. Revisit the chapter.';
+  app.innerHTML=`<div class="result">
+      <div class="rpct">${pct}%</div>
+      <div class="rscore">${Q.score} / ${Q.questions.length} correct</div>
+      <div class="rmsg">${msg}</div>
+      <div class="rbtns">
+        <button class="rand" id="retry">Retry</button>
+        <button class="rand alt" id="more">Another chapter</button>
+      </div>
+    </div>`;
+  $('#retry').onclick=()=>startQuiz(Q.title, Q.questions.slice().sort(()=>Math.random()-0.5));
+  $('#more').onclick=()=>{QSTATE={subj:QSTATE.subj};render();};
+}
+
+function quizView(){
+  if(!QSTATE){quizSubjects();return;}
+  if(QSTATE.quiz){QSTATE.quiz.answered?renderQuestion():renderQuestion();return;}
+  quizChapters();
+}
+
 function render(){
   if(!M)return;
   if(VIEW==='home')home();
@@ -174,9 +286,11 @@ function render(){
   else if(VIEW==='pyq')flatView('pyq','PYQ Banks');
   else if(VIEW==='halfyearly')flatView('halfyearly','Half-Yearly');
   else if(VIEW==='final')flatView('final','Final Papers');
+  else if(VIEW==='quiz')quizView();
   else if(VIEW==='infographics')infographics();
   else if(VIEW==='extras')extras();
 }
 
 fetch('manifest.json?'+Date.now()).then(r=>r.json()).then(d=>{M=d;render();})
   .catch(e=>{app.innerHTML='<p class="empty">Could not load manifest.json — run build_site.py first.</p>';});
+fetch('quiz_data.json?'+Date.now()).then(r=>r.json()).then(d=>{QZ=d;}).catch(e=>{QZ=null;});

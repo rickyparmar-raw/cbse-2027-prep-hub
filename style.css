@@ -130,3 +130,29 @@ footer{text-align:center;color:var(--faint);font-size:11.5px;padding:48px 20px 6
 .thumb:hover{border-color:var(--line-2);transform:translateY(-3px);box-shadow:var(--shadow)}
 .thumbimg{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center top;background-color:var(--surface-2);border-bottom:1px solid var(--line)}
 .thumbcap{padding:12px 15px;font-weight:500;font-size:13.5px}
+
+/* ---------- quiz ---------- */
+.qbar{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:10px;font-weight:500}
+.qprog{height:3px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:26px}
+.qprog-fill{height:100%;background:var(--accent);transition:width .3s}
+.qcard{max-width:720px}
+.qtext{font-size:19px;font-weight:600;line-height:1.5;margin-bottom:24px;font-family:'Space Grotesk';letter-spacing:-.01em}
+.qopts{display:grid;gap:10px}
+.qopt{display:flex;align-items:flex-start;gap:13px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:15px 17px;cursor:pointer;font-size:14.5px;font-family:inherit;color:var(--ink);transition:border-color .15s,background .15s;line-height:1.45}
+.qopt:hover:not(.locked){border-color:var(--accent-line);background:var(--surface-2)}
+.qopt.locked{cursor:default}
+.qlet{flex-shrink:0;width:24px;height:24px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:6px;font-size:12px;font-weight:600;color:var(--muted)}
+.qopt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,transparent)}
+.qopt.right .qlet{background:var(--good);border-color:var(--good);color:#fff}
+.qopt.wrong{border-color:#e5484d;background:#e5484d1f}
+.qopt.wrong .qlet{background:#e5484d;border-color:#e5484d;color:#fff}
+.feed{margin:20px 0 4px;font-size:14px;font-weight:600}
+.feed.ok{color:var(--good)}.feed.no{color:#e5707a}
+#qnav{margin-top:18px}
+.result{max-width:480px;margin:40px auto;text-align:center;padding:44px 32px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.rpct{font-family:'Space Grotesk';font-size:64px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--accent)}
+.rscore{font-size:15px;color:var(--muted);margin-top:12px}
+.rmsg{font-size:14px;color:var(--ink);margin-top:18px;font-weight:500}
+.rbtns{display:flex;gap:10px;justify-content:center;margin-top:28px}
+.rand.alt{background:none;color:var(--ink);border:1px solid var(--line-2)}
+.rand.alt:hover{border-color:var(--ink);filter:none}
