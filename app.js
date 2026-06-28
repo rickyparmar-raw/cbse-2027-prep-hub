@@ -62,7 +62,9 @@ function home(){
       <div class="stat"><b>${st.formula+st.notes}</b><span>Sheets & Notes</span></div>
       <div class="stat"><b>${doneCount}/${total}</b><span>Marked Done</span></div>
     </div></div>
-    <div class="sectitle">Jump to a subject</div><div class="grid" id="subjcards"></div>`;
+    <div class="sectitle">Jump to a subject</div><div class="grid" id="subjcards"></div>
+    <div class="sectitle">Browse by type</div><div class="grid typegrid" id="typecards"></div>
+    <div class="sectitle" id="ig-title" style="display:none">Recent infographics</div><div class="gallery" id="ig-preview"></div>`;
   const g=$('#subjcards');
   Object.entries(M.subjects).forEach(([k,s])=>{
     const c=document.createElement('div');c.className='card';c.dataset.subj=k;
@@ -72,6 +74,33 @@ function home(){
     c.onclick=()=>{SUBJ=k;VIEW='subject';render();};
     g.appendChild(c);
   });
+  // browse-by-type quick nav
+  const types=[
+    {v:'pyq',ic:'📚',t:'PYQ Banks',n:`${st.pyq} chapters`},
+    {v:'halfyearly',ic:'📝',t:'Half-Yearly',n:`${st.halfyearly} papers`},
+    {v:'final',ic:'🎯',t:'Final Papers',n:`${st.final} papers`},
+    {v:'infographics',ic:'🖼️',t:'Infographics',n:`${st.infographics||0} study-maps`},
+    {v:'extras',ic:'📐',t:'Formula & Notes',n:`${st.formula+st.notes} files`},
+  ];
+  const tg=$('#typecards');
+  types.forEach(x=>{
+    const c=document.createElement('div');c.className='card';
+    c.innerHTML=`<div class="ic">${x.ic}</div><div class="nm">${x.t}</div><div class="meta">${x.n}</div>`;
+    c.onclick=()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===x.v));VIEW=x.v;SUBJ=null;render();};
+    tg.appendChild(c);
+  });
+  // infographics preview strip (first 4)
+  const igs=(M.extras.infographics||[]).slice(0,4);
+  if(igs.length){
+    $('#ig-title').style.display='';
+    const ip=$('#ig-preview');
+    igs.forEach(it=>{
+      const c=document.createElement('div');c.className='thumb';
+      c.innerHTML=`<div class="thumbimg" style="background-image:url('${it.path}')"></div><div class="thumbcap">${it.title}</div>`;
+      c.onclick=()=>open(it);
+      ip.appendChild(c);
+    });
+  }
 }
 
 function subjectCards(kind,label){
