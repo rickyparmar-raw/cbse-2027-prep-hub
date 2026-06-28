@@ -127,7 +127,58 @@
      "size": 301587
     }
    ],
-   "halfyearly": []
+   "halfyearly": [
+    {
+     "title": "Set 1",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set01.pdf",
+     "size": 583387
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set02.pdf",
+     "size": 538046
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set03.pdf",
+     "size": 575885
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set04.pdf",
+     "size": 627140
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set05.pdf",
+     "size": 881120
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set06.pdf",
+     "size": 532427
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set07.pdf",
+     "size": 764044
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set08.pdf",
+     "size": 754188
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set09.pdf",
+     "size": 650681
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/halfyearly/Physics_HalfYearly_Set10.pdf",
+     "size": 594473
+    }
+   ]
   },
   "Chemistry": {
    "pretty": "Chemistry",
@@ -236,7 +287,58 @@
      "size": 359294
     }
    ],
-   "halfyearly": []
+   "halfyearly": [
+    {
+     "title": "Set 1",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set01.pdf",
+     "size": 607306
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set02.pdf",
+     "size": 739631
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set03.pdf",
+     "size": 560291
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set04.pdf",
+     "size": 663673
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set05.pdf",
+     "size": 615362
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set06.pdf",
+     "size": 973976
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set07.pdf",
+     "size": 805520
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set08.pdf",
+     "size": 785566
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set09.pdf",
+     "size": 650866
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/halfyearly/Chemistry_HalfYearly_Set10.pdf",
+     "size": 850989
+    }
+   ]
   },
   "Mathematics": {
    "pretty": "Maths",
@@ -335,7 +437,58 @@
      "size": 326961
     }
    ],
-   "halfyearly": []
+   "halfyearly": [
+    {
+     "title": "Set 1",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set01.pdf",
+     "size": 663685
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set02.pdf",
+     "size": 845814
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set03.pdf",
+     "size": 901615
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set04.pdf",
+     "size": 878008
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set05.pdf",
+     "size": 960355
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set06.pdf",
+     "size": 979435
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set07.pdf",
+     "size": 985279
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set08.pdf",
+     "size": 909696
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set09.pdf",
+     "size": 999416
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/halfyearly/Maths_HalfYearly_Set10.pdf",
+     "size": 955669
+    }
+   ]
   },
   "Physical_Education": {
    "pretty": "Physical Education",
@@ -444,7 +597,58 @@
      "size": 140493
     }
    ],
-   "halfyearly": []
+   "halfyearly": [
+    {
+     "title": "Set 1",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set01.pdf",
+     "size": 228033
+    },
+    {
+     "title": "Set 2",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set02.pdf",
+     "size": 235362
+    },
+    {
+     "title": "Set 3",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set03.pdf",
+     "size": 225261
+    },
+    {
+     "title": "Set 4",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set04.pdf",
+     "size": 230377
+    },
+    {
+     "title": "Set 5",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set05.pdf",
+     "size": 213689
+    },
+    {
+     "title": "Set 6",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set06.pdf",
+     "size": 232400
+    },
+    {
+     "title": "Set 7",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set07.pdf",
+     "size": 215764
+    },
+    {
+     "title": "Set 8",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set08.pdf",
+     "size": 299542
+    },
+    {
+     "title": "Set 9",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set09.pdf",
+     "size": 233024
+    },
+    {
+     "title": "Set 10",
+     "path": "assets/halfyearly/Pe_HalfYearly_Set10.pdf",
+     "size": 274283
+    }
+   ]
   }
  },
  "extras": {
@@ -491,13 +695,91 @@
     "path": "assets/notes/Optical_Isomerism_Slides_Pankaj_Sir.pdf",
     "size": 11181403
    }
+  ],
+  "infographics": [
+   {
+    "title": "The Last Lesson",
+    "path": "assets/infographics/01_The_Last_Lesson.png",
+    "size": 6802405
+   },
+   {
+    "title": "Lost Spring",
+    "path": "assets/infographics/02_Lost_Spring.png",
+    "size": 6003029
+   },
+   {
+    "title": "Deep Water",
+    "path": "assets/infographics/03_Deep_Water.png",
+    "size": 4765670
+   },
+   {
+    "title": "The Rattrap",
+    "path": "assets/infographics/04_The_Rattrap.png",
+    "size": 6136248
+   },
+   {
+    "title": "Indigo",
+    "path": "assets/infographics/05_Indigo.png",
+    "size": 5838762
+   },
+   {
+    "title": "Poets and Pancakes",
+    "path": "assets/infographics/06_Poets_and_Pancakes.png",
+    "size": 5841889
+   },
+   {
+    "title": "Going Places",
+    "path": "assets/infographics/08_Going_Places.png",
+    "size": 6225185
+   },
+   {
+    "title": "My Mother at Sixty Six",
+    "path": "assets/infographics/09_My_Mother_at_Sixty_Six.png",
+    "size": 5631986
+   },
+   {
+    "title": "Keeping Quiet",
+    "path": "assets/infographics/10_Keeping_Quiet.png",
+    "size": 5293769
+   },
+   {
+    "title": "A Thing of Beauty",
+    "path": "assets/infographics/11_A_Thing_of_Beauty.png",
+    "size": 7748508
+   },
+   {
+    "title": "The Third Level",
+    "path": "assets/infographics/12_The_Third_Level.png",
+    "size": 7005422
+   },
+   {
+    "title": "The Tiger King",
+    "path": "assets/infographics/13_The_Tiger_King.png",
+    "size": 6074846
+   },
+   {
+    "title": "Journey to the End of the Earth",
+    "path": "assets/infographics/14_Journey_to_the_End_of_the_Earth.png",
+    "size": 7163809
+   },
+   {
+    "title": "On the Face of It",
+    "path": "assets/infographics/16_On_the_Face_of_It.png",
+    "size": 5774348
+   },
+   {
+    "title": "Memories of Childhood",
+    "path": "assets/infographics/17_Memories_of_Childhood.png",
+    "size": 6366913
+   }
   ]
  },
  "stats": {
   "pyq": 42,
   "final": 40,
-  "halfyearly": 0,
+  "halfyearly": 40,
   "formula": 4,
-  "notes": 4
+  "notes": 4,
+  "infographics": 15
  }
 }

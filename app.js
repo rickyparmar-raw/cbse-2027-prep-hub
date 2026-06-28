@@ -7,14 +7,15 @@ const kb=b=>b>1048576?(b/1048576).toFixed(1)+' MB':Math.round(b/1024)+' KB';
 
 // theme
 const setTheme=t=>{document.documentElement.dataset.theme=t;localStorage.setItem('cbse_theme',t);$('#theme').textContent=t==='dark'?'☀️':'🌙';};
-setTheme(localStorage.getItem('cbse_theme')||'light');
+setTheme(localStorage.getItem('cbse_theme')||'dark');
 $('#theme').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
 
 // viewer
 function open(item){
+  const ext=(item.path.match(/\.(\w+)$/)||[,'pdf'])[1];
   $('#viewer-title').textContent=item.title;
   $('#viewer-frame').src=item.path;
-  $('#viewer-dl').href=item.path; $('#viewer-dl').download=item.title.replace(/[^\w]+/g,'_')+'.pdf';
+  $('#viewer-dl').href=item.path; $('#viewer-dl').download=item.title.replace(/[^\w]+/g,'_')+'.'+ext;
   $('#viewer-open').href=item.path;
   $('#viewer').classList.remove('hidden');
 }
@@ -52,20 +53,22 @@ function home(){
   const d=done(); const total=M.stats.pyq+M.stats.final+M.stats.halfyearly;
   const doneCount=Object.keys(d).filter(k=>d[k]).length;
   app.innerHTML=`<div class="hero"><h2>Your CBSE 2027 Prep Hub</h2>
-    <p>Everything in one place — chapter PYQ banks, predicted papers, formula sheets & class notes.</p>
+    <p>Everything in one place — chapter PYQ banks, predicted papers, English infographics, formula sheets & class notes.</p>
     <div class="statgrid">
       <div class="stat"><b>${st.pyq}</b><span>PYQ Chapters</span></div>
       <div class="stat"><b>${st.halfyearly}</b><span>Half-Yearly</span></div>
       <div class="stat"><b>${st.final}</b><span>Final Papers</span></div>
+      <div class="stat"><b>${st.infographics||0}</b><span>Infographics</span></div>
       <div class="stat"><b>${st.formula+st.notes}</b><span>Sheets & Notes</span></div>
       <div class="stat"><b>${doneCount}/${total}</b><span>Marked Done</span></div>
     </div></div>
     <div class="sectitle">Jump to a subject</div><div class="grid" id="subjcards"></div>`;
   const g=$('#subjcards');
   Object.entries(M.subjects).forEach(([k,s])=>{
-    const c=document.createElement('div');c.className='card';
+    const c=document.createElement('div');c.className='card';c.dataset.subj=k;
     c.innerHTML=`<div class="ic">${s.icon}</div><div class="nm">${s.pretty}</div>
-      <div class="meta">${s.pyq.length} PYQ · ${s.halfyearly.length} half-yearly · ${s.final.length} final</div>`;
+      <div class="meta">${s.pyq.length} PYQ · ${s.halfyearly.length} half-yearly · ${s.final.length} final</div>
+      <span class="arrow">→</span>`;
     c.onclick=()=>{SUBJ=k;VIEW='subject';render();};
     g.appendChild(c);
   });
@@ -76,8 +79,8 @@ function subjectCards(kind,label){
   const g=$('#g');
   Object.entries(M.subjects).forEach(([k,s])=>{
     const n=s[kind].length;
-    const c=document.createElement('div');c.className='card';
-    c.innerHTML=`<div class="ic">${s.icon}</div><div class="nm">${s.pretty}</div><div class="meta">${n} item${n!=1?'s':''}</div>`;
+    const c=document.createElement('div');c.className='card';c.dataset.subj=k;
+    c.innerHTML=`<div class="ic">${s.icon}</div><div class="nm">${s.pretty}</div><div class="meta">${n} item${n!=1?'s':''}</div><span class="arrow">→</span>`;
     c.onclick=()=>{SUBJ=k;render();};
     g.appendChild(c);
   });
@@ -120,6 +123,21 @@ function extras(){
   listInto(w('#n'),nt,'No notes.');
 }
 
+function infographics(){
+  const arr=filt(M.extras.infographics||[]);
+  app.innerHTML=`<div class="sectitle">English Chapter Infographics <span class="pill">${(M.extras.infographics||[]).length}</span></div>
+    <p style="color:var(--muted);font-size:13.5px;margin:-6px 0 18px">Visual study-maps for Class 12 English (Flamingo &amp; Vistas), grounded in NCERT text. Click any to view full size.</p>
+    <div class="gallery" id="gal"></div>`;
+  const g=$('#gal');
+  if(!arr.length){const e=document.createElement('div');e.className='empty';e.textContent='No infographics yet.';g.appendChild(e);return;}
+  arr.forEach(it=>{
+    const c=document.createElement('div');c.className='thumb';
+    c.innerHTML=`<div class="thumbimg" style="background-image:url('${it.path}')"></div><div class="thumbcap">${it.title}</div>`;
+    c.onclick=()=>open(it);
+    g.appendChild(c);
+  });
+}
+
 function render(){
   if(!M)return;
   if(VIEW==='home')home();
@@ -127,6 +145,7 @@ function render(){
   else if(VIEW==='pyq')flatView('pyq','PYQ Banks');
   else if(VIEW==='halfyearly')flatView('halfyearly','Half-Yearly');
   else if(VIEW==='final')flatView('final','Final Papers');
+  else if(VIEW==='infographics')infographics();
   else if(VIEW==='extras')extras();
 }
 

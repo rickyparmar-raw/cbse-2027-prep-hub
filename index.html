@@ -4,14 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CBSE 2027 · Prep Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="bar">
-    <h1>📘 CBSE 2027 · Prep Hub</h1>
+    <div class="brand">
+      <span class="logo">📘</span>
+      <div class="brandtxt">
+        <strong>CBSE 2027</strong>
+        <small>Prep Hub</small>
+      </div>
+    </div>
     <div class="bar-right">
-      <input id="search" type="search" placeholder="Search chapters, papers…" autocomplete="off">
+      <div class="searchwrap">
+        <span class="searchicon">🔍</span>
+        <input id="search" type="search" placeholder="Search chapters, papers…" autocomplete="off">
+      </div>
       <button id="theme" title="Toggle theme">🌙</button>
     </div>
   </div>
@@ -20,7 +32,8 @@
     <button class="tab" data-view="pyq">PYQ Banks</button>
     <button class="tab" data-view="halfyearly">Half-Yearly</button>
     <button class="tab" data-view="final">Final Papers</button>
-    <button class="tab" data-view="extras">Formula & Notes</button>
+    <button class="tab" data-view="infographics">Infographics</button>
+    <button class="tab" data-view="extras">Formula &amp; Notes</button>
   </nav>
 </header>
 

@@ -27,6 +27,14 @@ def copy_pdf(src, rel):
     shutil.copy2(src, dst)
     return f"assets/{rel}", os.path.getsize(src)
 
+def info_title(fn):
+    # 01_The_Last_Lesson.png -> "The Last Lesson"
+    m = re.match(r'(\d+)_(.+)\.png', fn)
+    return m.group(2).replace('_',' ') if m else fn[:-4].replace('_',' ')
+def info_order(fn):
+    m = re.match(r'(\d+)_', fn)
+    return int(m.group(1)) if m else 999
+
 def main():
     if os.path.isdir(ASSET): shutil.rmtree(ASSET)
     os.makedirs(ASSET, exist_ok=True)
@@ -51,9 +59,11 @@ def main():
                     entry["final"].append({"title": f"Set {int(setn.group(1))}" if setn else fn[:-4], "path": path, "size": size})
         # Half-yearly
         d = f"{BASE}/PDF_Half_Yearly"
+        HY_PREFIX = {"Physics":"Physics","Chemistry":"Chemistry","Mathematics":"Maths","Physical_Education":"Pe"}
         if os.path.isdir(d):
+            pref = HY_PREFIX[subj] + "_"
             for fn in sorted(os.listdir(d)):
-                if fn.lower().startswith(subj.lower().split('_')[0]) and fn.endswith(".pdf"):
+                if fn.startswith(pref) and fn.endswith(".pdf"):
                     path,size = copy_pdf(f"{d}/{fn}", f"halfyearly/{fn}")
                     setn = re.search(r'Set(\d+)', fn)
                     entry["halfyearly"].append({"title": f"Set {int(setn.group(1))}" if setn else fn[:-4], "path": path, "size": size})
@@ -76,13 +86,23 @@ def main():
                 notes.append({"title": fn[:-4].replace('_',' '), "path": path, "size": size})
     manifest["extras"]={"formula": fs, "notes": notes}
 
+    # English chapter infographics (PNG visual study-maps)
+    info=[]
+    d=f"{BASE}/Infographics_English"
+    if os.path.isdir(d):
+        for fn in sorted(os.listdir(d), key=info_order):
+            if fn.endswith(".png"):
+                path,size=copy_pdf(f"{d}/{fn}", f"infographics/{fn}")
+                info.append({"title": info_title(fn), "path": path, "size": size})
+    manifest["extras"]["infographics"]=info
+
     # counts
     tot_pyq=sum(len(s["pyq"]) for s in manifest["subjects"].values())
     tot_fin=sum(len(s["final"]) for s in manifest["subjects"].values())
     tot_hy =sum(len(s["halfyearly"]) for s in manifest["subjects"].values())
-    manifest["stats"]={"pyq":tot_pyq,"final":tot_fin,"halfyearly":tot_hy,"formula":len(fs),"notes":len(notes)}
+    manifest["stats"]={"pyq":tot_pyq,"final":tot_fin,"halfyearly":tot_hy,"formula":len(fs),"notes":len(notes),"infographics":len(info)}
 
     json.dump(manifest, open(f"{WEB}/manifest.json","w"), indent=1)
-    print(f"manifest: pyq={tot_pyq} final={tot_fin} halfyearly={tot_hy} formula={len(fs)} notes={len(notes)}")
+    print(f"manifest: pyq={tot_pyq} final={tot_fin} halfyearly={tot_hy} formula={len(fs)} notes={len(notes)} infographics={len(info)}")
 
 if __name__=="__main__": main()
